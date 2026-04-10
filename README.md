@@ -44,7 +44,20 @@ A full-stack web application for managing student bus pass applications, built w
 
 ## 📁 Project Structure
 
-project/ ├── frontend/ # React app │ └── src/ │ ├── pages/ │ ├── components/ │ └── context/ └── backend/ # Express API ├── controllers/ ├── models/ ├── routes/ ├── middleware/ └── utils/
+📁 project/
+│
+├── 📁 frontend/                # React App
+│   └── 📁 src/
+│       ├── 📁 pages/           # All pages (Home, Login, Dashboard etc.)
+│       ├── 📁 components/      # Reusable UI components
+│       └── 📁 context/         # React Context (Auth, Global State)
+│
+└── 📁 backend/                 # Express API
+    ├── 📁 controllers/         # Business logic
+    ├── 📁 models/              # Database schemas
+    ├── 📁 routes/              # API routes
+    ├── 📁 middleware/          # Authentication, error handling
+    └── 📁 utils/               # Helper functions
 
 
 ## 🚀 Getting Started Locally
