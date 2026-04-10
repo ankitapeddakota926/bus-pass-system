@@ -13,6 +13,8 @@ const storage = new CloudinaryStorage({
   params: (req, file) => ({
     folder: 'bus-pass-documents',
     resource_type: 'auto',
+    type: 'upload',
+    access_mode: 'public',
     public_id: `${file.fieldname}-${Date.now()}`,
     allowed_formats: ['pdf', 'jpg', 'jpeg', 'png'],
   }),
