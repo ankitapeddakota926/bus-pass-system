@@ -919,16 +919,34 @@ const AdminDashboard = () => {
               ))}
             </div>
 
-            {selectedApp.documentUrl && (
-              <a
-                href={`${API_BASE}/${selectedApp.documentUrl}`}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1.25rem', fontSize: '0.85rem' }}
-              >
-                <Eye size={14} /> View Document
-              </a>
+            {selectedApp.documents && (
+              <div style={{ marginBottom: '1.25rem' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-light)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem' }}>
+                  Uploaded Documents
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {[
+                    ['Application Form', selectedApp.documents.applicationForm],
+                    ['Bona Fide Certificate', selectedApp.documents.bonaFideCertificate],
+                    ['Aadhaar Card', selectedApp.documents.aadhaarCard],
+                    ['Fee Receipt', selectedApp.documents.feeReceipt],
+                    ['Photograph', selectedApp.documents.photograph],
+                    ['Caste Certificate', selectedApp.documents.casteCertificate],
+                    ['Previous ID Card', selectedApp.documents.previousIdCard],
+                  ].filter(([, url]) => url).map(([label, url]) => (
+                    <a
+                      key={label}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-outline btn-sm"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.78rem', padding: '0.3rem 0.7rem' }}
+                    >
+                      <Eye size={12} /> {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             )}
 
             <div className="form-group">
